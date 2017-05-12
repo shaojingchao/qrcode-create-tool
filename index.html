@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>二维码批量生成、下载</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <style>
+    .box-content{
+        padding:20px;
+    }
+    .user-tips{
+        padding:10px;
+        font-size:16px;
+        margin-bottom:15px;
+        border-radius: 4px;
+    }
+    .qr_list li{
+        float: left;
+        display: inline-block;
+        margin: 10px;
+        word-wrap: break-word;
+        /*background: #f1f1f1;*/
+        padding: 10px;
+        border-radius: 4px;
+        box-sizing: content-box;
+        border: 1px solid #ddd;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box-content">
+        <div class="bg-primary user-tips">为保证兼容性，请使用Chrome浏览器</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">二维码内容</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <textarea id="qr_text" class="form-control" id="exampleInputEmail1" placeholder="请输入二维码内容 ~多条内容请以回车换行~" rows="10"></textarea>
+                </div>
+                <div>
+                    <div class="form-inline">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label>尺寸：</label>
+                                <select id="qr_size" class="form-control">
+                                    <option value="100">100 * 100</option>
+                                </select>
+                                <label>名称：</label>
+                                <div class="input-group">
+                                    <input id="qr_name" class="form-control" type="text" value="qrcode" placeholder="图片保存名称">
+                                    <div class="input-group-addon">_01</div>
+                                </div>
+                                <button type="button" id="qr_preview" class="btn btn-primary">预览二维码</button>
+                                <button type="button" id="qr_save" class="btn btn-success">下载二维码</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">二维码预览</div>
+            <div class="panel-body">
+                <div id="J_previewBox">
+                    <p class="text-center">预览区</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码批量下载</title>
+
+    <style>
+    #qr_text{
+        width:800px;
+        min-height:300px;
+        resize:hrizontal;
+    }
+    .qr_list{
+        overflow: hidden;
+    }
+    .qr_list li{
+        float: left;
+        margin:20px;
+    }
+    </style>
+
+    <script type="text/html" id="qr_list_tpl">
+        <ul class="qr_list">
+            {{each $data as item i}}
+            <li>{{#item}}</li>
+            {{/each}}
+        </ul>
+    </script>
+</head>
+<body>
+<textarea id="qr_text" placeholder="输入文本"></textarea>
+<p>
+    可输入多行文本，换行使用回车键，可生成多个二维码
+</p>
+
+<div class="qr_handler">
+尺寸：<select id="qr_size">
+    <option value="100">100*100</option>
+    <option value="140">140*140</option>
+    <option value="148">148*148</option>
+    <option value="180">180*180</option>
+    <option value="300">300*300</option>
+    <option value="600">600*600</option>
+    <option value="1000">1000*1000</option>
+</select>
+    <input id="qr_preview" type="button" value="预览二维码">
+    <input id="qr_save" type="button" value="下载二维码">
+</div>
+
+<div id="J_previewBox">
+    
+</div>
+    
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./bower_components/art-template/lib/template-web.js"></script>
+    <script type="text/javascript" src="./bower_components/jquery-qrcode/dist/jquery-qrcode.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
